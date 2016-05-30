@@ -9,6 +9,12 @@ public class LeastCommonMultipleTest {
   public ExpectedException thrown = ExpectedException.none();
 
   @Test
+  public void thereIsNoLeastCommonMultipleOf1() {
+    thrown.expect(IllegalArgumentException.class);
+    LeastCommonMultiple.ofIntegers(1);
+  }
+
+  @Test
   public void thereIsNoLeastCommonMultipleOf0And1() {
     thrown.expect(IllegalArgumentException.class);
     LeastCommonMultiple.ofIntegers(0, 1);

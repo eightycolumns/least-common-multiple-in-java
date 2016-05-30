@@ -4,6 +4,12 @@ class LeastCommonMultiple {
   private LeastCommonMultiple() {}
 
   public static int ofIntegers(int... args) {
+    if (args.length < 2) {
+      throw new IllegalArgumentException(
+        "LeastCommonMultiple.ofIntegers() expects two or more integers."
+      );
+    }
+
     if (includesZero(args)) {
       throw new IllegalArgumentException(
         "LeastCommonMultiple.ofIntegers() expects nonzero integers."
