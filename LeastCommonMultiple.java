@@ -22,7 +22,7 @@ class LeastCommonMultiple {
     int d = max;
 
     while (true) {
-      if (isLcm(d, args)) {
+      if (isLeastCommonMultiple(d, args)) {
         return d;
       }
 
@@ -60,7 +60,7 @@ class LeastCommonMultiple {
     return max;
   }
 
-  private static boolean isLcm(int d, int[] ints) {
+  private static boolean isLeastCommonMultiple(int d, int[] ints) {
     for (int i = 0; i < ints.length; i += 1) {
       if (d % ints[i] != 0) {
         return false;
