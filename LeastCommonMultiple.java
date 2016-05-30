@@ -4,6 +4,12 @@ class LeastCommonMultiple {
   private LeastCommonMultiple() {}
 
   public static int ofIntegers(int... args) {
+    if (includesZero(args)) {
+      throw new IllegalArgumentException(
+        "LeastCommonMultiple.ofIntegers() expects nonzero integers."
+      );
+    }
+
     args = abs(args);
 
     int max = max(args);
@@ -16,6 +22,16 @@ class LeastCommonMultiple {
 
       d += max;
     }
+  }
+
+  private static boolean includesZero(int[] ints) {
+    for (int d : ints) {
+      if (d == 0) {
+        return true;
+      }
+    }
+
+    return false;
   }
 
   private static int[] abs(int[] ints) {

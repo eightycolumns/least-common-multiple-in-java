@@ -1,8 +1,19 @@
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.assertEquals;
 
 public class LeastCommonMultipleTest {
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
+
+  @Test
+  public void thereIsNoLeastCommonMultipleOf0And1() {
+    thrown.expect(IllegalArgumentException.class);
+    LeastCommonMultiple.ofIntegers(0, 1);
+  }
+
   @Test
   public void theLeastCommonMultipleOf2And3Is6() {
     assertEquals(6, LeastCommonMultiple.ofIntegers(2, 3));
