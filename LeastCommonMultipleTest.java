@@ -52,6 +52,11 @@ public class LeastCommonMultipleTest {
   }
 
   @Test
+  public void theLeastCommonMultipleOfNegative2AndNegative3Is6() {
+    assertEquals(6, LeastCommonMultiple.ofIntegers(-2, -3));
+  }
+
+  @Test
   public void theLeastCommonMultipleOf2And3And5Is30() {
     assertEquals(30, LeastCommonMultiple.ofIntegers(2, 3, 5));
   }
