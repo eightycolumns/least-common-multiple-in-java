@@ -27,4 +27,9 @@ public class LeastCommonMultipleTest {
   public void theLeastCommonMultipleOf10And10Is10() {
     assertEquals(10, LeastCommonMultiple.ofIntegers(10, 10));
   }
+
+  @Test
+  public void theLeastCommonMultipleOf10And100Is100() {
+    assertEquals(100, LeastCommonMultiple.ofIntegers(10, 100));
+  }
 }
