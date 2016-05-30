@@ -22,4 +22,9 @@ public class LeastCommonMultipleTest {
   public void theLeastCommonMultipleOfNegative7AndPositive11Is77() {
     assertEquals(77, LeastCommonMultiple.ofIntegers(-7, 11));
   }
+
+  @Test
+  public void theLeastCommonMultipleOf10And10Is10() {
+    assertEquals(10, LeastCommonMultiple.ofIntegers(10, 10));
+  }
 }
