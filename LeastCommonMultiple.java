@@ -10,14 +10,11 @@ class LeastCommonMultiple {
     int d = max;
 
     while (true) {
-      for (int arg : args) {
-        if (d % arg != 0) {
-          d += max;
-          continue;
-        }
+      if (isLcm(d, args)) {
+        return d;
       }
 
-      return d;
+      d += max;
     }
   }
 
@@ -32,12 +29,22 @@ class LeastCommonMultiple {
   }
 
   private static int max(int[] ints) {
-    int max = 0;
+    int max = ints[0];
 
-    for (int d : ints) {
-      max = (d > max) ? d : max;
+    for (int i = 1; i < ints.length; i += 1) {
+      max = (ints[i] > max) ? ints[i] : max;
     }
 
     return max;
+  }
+
+  private static boolean isLcm(int d, int[] ints) {
+    for (int i = 0; i < ints.length; i += 1) {
+      if (d % ints[i] != 0) {
+        return false;
+      }
+    }
+
+    return true;
   }
 }
