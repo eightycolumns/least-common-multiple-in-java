@@ -70,4 +70,9 @@ public class LeastCommonMultipleTest {
   public void theLeastCommonMultipleOf2And3And5Is30() {
     assertEquals(30, LeastCommonMultiple.ofIntegers(2, 3, 5));
   }
+
+  @Test
+  public void theLeastCommonMultipleOf2And3And5And7And11Is2310() {
+    assertEquals(2310, LeastCommonMultiple.ofIntegers(2, 3, 5, 7, 11));
+  }
 }
