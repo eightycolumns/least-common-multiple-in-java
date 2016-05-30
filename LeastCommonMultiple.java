@@ -54,7 +54,7 @@ class LeastCommonMultiple {
     int max = ints[0];
 
     for (int i = 1; i < ints.length; i += 1) {
-      max = (ints[i] > max) ? ints[i] : max;
+      max = Math.max(max, ints[i]);
     }
 
     return max;
